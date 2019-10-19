@@ -29,8 +29,14 @@ test_case2 = "{([])}"
 test_case3 = "[()]{}{[()()]()}"
 test_case4 = "[(])"
 test_case5 = "{()}[]["
-print(check_balanced_parenthesis(test_case1))
+
+print(f""" check_balanced_parenthesis(test_case1="{[(])}") : {check_balanced_parenthesis(test_case1)}""")
+print(f""" check_balanced_parenthesis(test_case2 = "{([])}") : {check_balanced_parenthesis(test_case2)}""")
+print(""" check_balanced_parenthesis(test_case3 = "[()]{}{[()()]()}}" : """ + check_balanced_parenthesis(test_case3))
+print(""" check_balanced_parenthesis(test_case4 = "[[(])" : """ + check_balanced_parenthesis(test_case4))
+print(f""" check_balanced_parenthesis(test_case5 = "{()}[][") : {check_balanced_parenthesis(test_case5)}""")
+
 print(check_balanced_parenthesis(test_case2))
 print(check_balanced_parenthesis(test_case3))
-print(check_balanced_parenthesis(test_case4))
+#print(check_balanced_parenthesis(test_case4))
 print(check_balanced_parenthesis(test_case5))

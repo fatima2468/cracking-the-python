@@ -31,7 +31,7 @@ result = find_averages_of_subarrays(5, [1, 3, 2, 6, -1, 4, 1, 8, 2, 3, 4, 6, -1,
 print("Averages of subarrays of size K: " + str(result))
 
 
-# Exercise-2: For the given array and size K, find sub-array having max sum of all sub-arrays
+# Exercise-2: For the given array and size K, find sub-array having max sum among all sub-arrays of size K
 # Solution-2 : Time Complexity O(N)
 def max_sub_array_of_size_k(K, arr):
     _sum = 0.0
@@ -43,16 +43,17 @@ def max_sub_array_of_size_k(K, arr):
     for i in range(len(arr)):
         _sum += arr[i]
         count += 1
-    if count == K:
-        if _sum > _maxsum:
-            _maxsubarr
 
-        _sum -= arr[start]
-        start += 1
-        count = 0
+        if count == K:
+            if _sum > _maxsum:
+                _maxsum = _sum
+                _maxsubarr = arr[i+1-K : i+1]
 
-    return _maxsum
+            _sum -= arr[start]
+            start += 1
+            count -= 1
 
+    return _maxsum, _maxsubarr
 
-print("Maximum of subarrays of size K=5: " + max_sub_array_of_size_k(5, [1, 3, 2, 6, -1, 4, 1, 8, 2, 3, 4, 6, -1, -2, 8])
-print("Maximum of subarrays of size K=2: " + max_sub_array_of_size_k(2, [1, 3, 2, 6, 8]))
+print(f"Maximum of subarrays of size K=2: {max_sub_array_of_size_k(2, [9, 9, 8, 6, 8])}")
+print(f"Maximum of subarrays of size K=5: {max_sub_array_of_size_k(5, [1, 3, 2, 6, -1, 4, 1, 8, 2, 3, 4, 6, -1, -2, 8])}")

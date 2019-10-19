@@ -38,7 +38,8 @@ def isUniqueCharSequence(input:string):
         charSet[val] = True
     return True
 
-isUniqueCharSeq("isjkdhks")
-isUniqueCharSeq("abc%defgh!")
-isUniqueCharSequence("isjkdhks")
-isUniqueCharSequence("abc%defgh!")
+print (f"""TestCase1: String "isjkdhks" holds unique charcaters:  {isUniqueCharSeq("isjkdhks")}""")
+print (f"""TestCase2: String "abc%defgh!" holds unique charcaters:  {isUniqueCharSeq("abc%defgh!")}""")
+print()
+print (f"""TestCase1 : String "isjkdhks" holds unique charcaters:  {isUniqueCharSequence("isjkdhks")}""")
+print (f"""TestCase2: String "abc%defgh!" holds unique charcaters:  {isUniqueCharSequence("abc%defgh!")}""")
